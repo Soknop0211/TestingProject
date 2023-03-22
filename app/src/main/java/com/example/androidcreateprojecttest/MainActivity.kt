@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
+
         getFilePath = "https://sandboxeazy.daikou.asia/storage/4f15665198381e9c25f7c9a7b013754a.mp4"
 
         videoUpload = findViewById(R.id.videoPlayer)
@@ -54,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun DownloadFromUrl(fileName: String) {  //this is the downloader method
+    private fun DownloadFromUrl(fileName: String) {  //this is the downloader method
         val PATH = "/sdcard/download/" //put the downloaded file here
         try {
             val url = URL("http://www.ericmoyer.com/episode1.mp4") //you can write here any link
