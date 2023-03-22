@@ -66,6 +66,9 @@ class MainActivity : AppCompatActivity() {
             Log.d("VideoManager", "download begining")
             Log.d("VideoManager", "download url:$url")
             Log.d("VideoManager", "downloaded file name:$fileName")
+
+
+
             /* Open a connection to that URL. */
             val ucon = url.openConnection()
 
