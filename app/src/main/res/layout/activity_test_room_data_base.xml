@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.example.androidcreateprojecttest.repostory.test_room_database.model.view_model.TestDataBaseVM" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.TestRoomDataBaseActivity">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Insert"
+            android:onClick="@{() -> viewmodel.addPressed()}"
+            android:layout_margin="10dp"
+            android:id="@+id/btnAdd"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:onClick="@{() -> viewmodel.readPressed()}"
+            android:layout_margin="10dp"
+            android:id="@+id/btnRead"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:layout_margin="10dp"
+            android:onClick="@{() -> viewmodel.updatePressed()}"
+            android:id="@+id/btnUpdate"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:layout_margin="10dp"
+            android:onClick="@{() -> viewmodel.removePressed()}"
+            android:id="@+id/btnDelete"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete All"
+            android:layout_margin="10dp"
+            android:onClick="@{() -> viewmodel.removeAllPressed()}"
+            android:id="@+id/btnDeleteAll"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:layout_margin="10dp"
+            android:onClick="@{() -> viewmodel.filterPressed()}"
+            android:id="@+id/btnFilterName"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="100dp"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/white"
+                    android:background="@color/purple_500"/>
+
+            </ScrollView>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="@{viewmodel.isProgressEvent ? View.VISIBLE:View.GONE}"
+                android:layout_gravity="center" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

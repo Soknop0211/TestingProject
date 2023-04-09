@@ -28,4 +28,29 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_gravity="center" />
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test DataBase"
+        android:layout_margin="10dp"
+        android:id="@+id/btnDb"/>
+
+    <Button
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test Drawer"
+        android:layout_margin="10dp"
+        android:id="@+id/btnDrawable"/>
+
+    <Button
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test Compose"
+        android:layout_margin="10dp"
+        android:id="@+id/btnCompose"/>
+
 </RelativeLayout>
