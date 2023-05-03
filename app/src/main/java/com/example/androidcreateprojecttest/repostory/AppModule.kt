@@ -1,9 +1,11 @@
 package com.example.androidcreateprojecttest.repostory
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
-import com.example.androidcreateprojecttest.repostory.test_room_database.model.BookDao
-import com.example.androidcreateprojecttest.repostory.test_room_database.model.BookDatabase
+import com.example.androidcreateprojecttest.data.db.repository.AuthRepository
+import com.example.androidcreateprojecttest.test_room_database.BookDao
+import com.example.androidcreateprojecttest.test_room_database.BookDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
@@ -37,6 +39,18 @@ object AppModule {
     @Singleton
     fun provideUserDao(db: BookDatabase): BookDao {
         return db.bookDao()
+    }
+
+    @Provides
+    fun provideFireStore(): FirebaseFirestore = FirebaseFirestore.getInstance()
+
+    @Provides
+    fun provideAuthRepository(): AuthRepository  = AuthRepository()
+
+    @Singleton
+    @Provides
+    fun provideContext(application: Application): Context {
+        return application
     }
 }
 

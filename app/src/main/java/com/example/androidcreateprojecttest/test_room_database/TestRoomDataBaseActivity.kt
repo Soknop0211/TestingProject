@@ -1,14 +1,12 @@
-package com.example.androidcreateprojecttest.ui
+package com.example.androidcreateprojecttest.test_room_database
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import com.example.androidcreateprojecttest.databinding.ActivityTestRoomDataBaseBinding
-import com.example.androidcreateprojecttest.repostory.test_room_database.model.Book
-import com.example.androidcreateprojecttest.repostory.test_room_database.model.view_model.TestDataBaseVM
+import com.example.androidcreateprojecttest.test_room_database.view_model.TestDataBaseVM
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.delay
 
 @AndroidEntryPoint
 class TestRoomDataBaseActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.newapp.test_firebase_app.util
+package com.example.androidcreateprojecttest.util
 
 fun isEmailValid(email: CharSequence): Boolean {
     return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()

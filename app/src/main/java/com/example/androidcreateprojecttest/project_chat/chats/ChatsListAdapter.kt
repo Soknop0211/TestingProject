@@ -14,9 +14,9 @@ class ChatsListAdapter internal constructor(private val viewModel: ChatsViewMode
     class ViewHolder(private val binding: ListItemChatBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(viewModel: ChatsViewModel, item: ChatWithUserInfo) {
-            binding.viewmodel = viewModel
-            binding.chatwithuserinfo = item
-            binding.executePendingBindings()
+//            binding.viewmodel = viewModel
+//            binding.chatwithuserinfo = item
+//            binding.executePendingBindings()
         }
     }
 

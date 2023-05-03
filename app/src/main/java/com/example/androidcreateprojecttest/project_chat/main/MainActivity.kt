@@ -1,6 +1,7 @@
 package com.example.androidcreateprojecttest.project_chat.main
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
@@ -13,18 +14,21 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.androidcreateprojecttest.R
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
+import com.example.androidcreateprojecttest.data.db.remote.FirebaseDataSource
+import com.example.androidcreateprojecttest.util.forceHideKeyboard
+import com.google.android.gms.tasks.*
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.annotations.SerializedName
-import com.example.androidcreateprojecttest.data.db.remote.FirebaseDataSource
 import com.newapp.test_firebase_app.ui.main.MainViewModel
-import com.example.androidcreateprojecttest.util.forceHideKeyboard
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.reflect.Type
 
+
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navView: BottomNavigationView
@@ -124,6 +128,20 @@ class MainActivity : AppCompatActivity() {
 //                    s("Error getting documents." + task.exception)
 //                }
 //            }
+
+        FirebaseMessaging.getInstance().token.addOnSuccessListener { token: String ->
+            if (!TextUtils.isEmpty(token)) {
+                Log.d("TAG", "retrieve token successful : $token")
+            } else {
+                Log.w("TAG", "token should not be null...")
+            }
+        }.addOnFailureListener { e: Exception? -> }.addOnCanceledListener {}
+            .addOnCompleteListener { task: Task<String> ->
+                Log.v(
+                    "TAG",
+                    "This is the token : " + task.result
+                )
+            }
 
     }
 

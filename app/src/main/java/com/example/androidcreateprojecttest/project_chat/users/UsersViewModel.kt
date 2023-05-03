@@ -3,7 +3,7 @@ package com.example.androidcreateprojecttest.project_chat.users
 import androidx.lifecycle.*
 import com.example.androidcreateprojecttest.data.db.entity.User
 import com.example.androidcreateprojecttest.data.db.repository.DatabaseRepository
-import com.newapp.test_firebase_app.ui.DefaultViewModel
+import com.example.androidcreateprojecttest.project_chat.DefaultViewModel
 import com.example.androidcreateprojecttest.data.Event
 import com.example.androidcreateprojecttest.data.Result
 

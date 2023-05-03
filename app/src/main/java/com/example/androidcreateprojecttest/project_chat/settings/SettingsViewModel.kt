@@ -10,7 +10,7 @@ import com.example.androidcreateprojecttest.data.db.remote.FirebaseReferenceValu
 import com.example.androidcreateprojecttest.data.db.repository.AuthRepository
 import com.example.androidcreateprojecttest.data.db.repository.DatabaseRepository
 import com.example.androidcreateprojecttest.data.db.repository.StorageRepository
-import com.newapp.test_firebase_app.ui.DefaultViewModel
+import com.example.androidcreateprojecttest.project_chat.DefaultViewModel
 import com.example.androidcreateprojecttest.data.Event
 import com.example.androidcreateprojecttest.data.Result
 

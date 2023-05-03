@@ -12,10 +12,12 @@ import com.example.androidcreateprojecttest.R
 import com.example.androidcreateprojecttest.data.EventObserver
 import com.example.androidcreateprojecttest.databinding.FragmentCreateAccountBinding
 import com.example.androidcreateprojecttest.project_chat.main.MainActivity
-import com.newapp.test_firebase_app.util.SharedPreferencesUtil
+import com.example.androidcreateprojecttest.util.SharedPreferencesUtil
 import com.example.androidcreateprojecttest.util.forceHideKeyboard
 import com.example.androidcreateprojecttest.util.showSnackBar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CreateAccountFragment : Fragment() {
 
     private val viewModel by viewModels<CreateAccountViewModel>()
@@ -29,11 +31,13 @@ class CreateAccountFragment : Fragment() {
         return viewDataBinding.root
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         setupObservers()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
@@ -55,8 +59,10 @@ class CreateAccountFragment : Fragment() {
             })
 
         viewModel.isCreatedEvent.observe(viewLifecycleOwner, EventObserver {
-            SharedPreferencesUtil.saveUserID(requireContext(), it.uid)
+            SharedPreferencesUtil.saveUserID(requireContext(), it)
             navigateToChats()
+            view?.showSnackBar("You already created new account success fully !")
+            view?.forceHideKeyboard()
         })
     }
 

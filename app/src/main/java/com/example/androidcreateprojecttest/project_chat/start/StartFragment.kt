@@ -11,7 +11,7 @@ import com.example.androidcreateprojecttest.R
 import com.example.androidcreateprojecttest.data.EventObserver
 import com.example.androidcreateprojecttest.databinding.FragmentStartBinding
 import com.newapp.test_firebase_app.ui.start.StartViewModel
-import com.newapp.test_firebase_app.util.SharedPreferencesUtil
+import com.example.androidcreateprojecttest.util.SharedPreferencesUtil
 
 class StartFragment : Fragment() {
 

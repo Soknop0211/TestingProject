@@ -1,8 +1,10 @@
 package com.example.androidcreateprojecttest
 
 import android.app.Application
-import com.newapp.test_firebase_app.util.SharedPreferencesUtil
+import com.example.androidcreateprojecttest.util.SharedPreferencesUtil
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class App : Application() {
 
     override fun onCreate() {

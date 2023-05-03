@@ -1,5 +1,6 @@
 package com.example.androidcreateprojecttest.project_chat.chats
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,8 @@ import com.example.androidcreateprojecttest.App
 import com.example.androidcreateprojecttest.data.model.ChatWithUserInfo
 import com.example.androidcreateprojecttest.data.EventObserver
 import com.example.androidcreateprojecttest.databinding.FragmentChatsBinding
+import com.example.androidcreateprojecttest.project_chat.chat.ChatsViewModelFactory
+import com.example.androidcreateprojecttest.ui.MainActivity
 import com.newapp.test_firebase_app.ui.chat.ChatFragment
 import com.newapp.test_firebase_app.util.convertTwoUserIDs
 
@@ -35,6 +38,9 @@ class ChatsFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         setupListAdapter()
         setupObservers()
+
+        startActivity(Intent(context, MainActivity::class.java))
+
     }
 
     private fun setupListAdapter() {

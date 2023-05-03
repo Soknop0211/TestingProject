@@ -4,7 +4,7 @@ import androidx.lifecycle.*
 import com.example.androidcreateprojecttest.data.db.entity.*
 import com.example.androidcreateprojecttest.data.db.remote.FirebaseReferenceValueObserver
 import com.example.androidcreateprojecttest.data.db.repository.DatabaseRepository
-import com.newapp.test_firebase_app.ui.DefaultViewModel
+import com.example.androidcreateprojecttest.project_chat.DefaultViewModel
 import com.example.androidcreateprojecttest.data.Result
 import com.newapp.test_firebase_app.util.convertTwoUserIDs
 

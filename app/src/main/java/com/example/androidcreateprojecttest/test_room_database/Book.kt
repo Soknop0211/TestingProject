@@ -1,4 +1,4 @@
-package com.example.androidcreateprojecttest.repostory.test_room_database.model
+package com.example.androidcreateprojecttest.test_room_database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -8,7 +8,7 @@
 
         <variable
             name="viewmodel"
-            type="com.example.androidcreateprojecttest.repostory.test_room_database.model.view_model.TestDataBaseVM" />
+            type="com.example.androidcreateprojecttest.test_room_database.view_model.TestDataBaseVM" />
 
     </data>
 
@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.TestRoomDataBaseActivity">
+        tools:context=".test_room_database.TestRoomDataBaseActivity">
 
         <Button
             android:layout_width="match_parent"

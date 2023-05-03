@@ -7,9 +7,17 @@ import com.example.androidcreateprojecttest.data.db.entity.UserInfo
 import com.example.androidcreateprojecttest.data.db.remote.FirebaseReferenceChildObserver
 import com.example.androidcreateprojecttest.data.db.remote.FirebaseReferenceValueObserver
 import com.example.androidcreateprojecttest.data.db.repository.DatabaseRepository
-import com.newapp.test_firebase_app.ui.DefaultViewModel
 import com.example.androidcreateprojecttest.data.Result
-import com.newapp.test_firebase_app.util.addNewItem
+import com.example.androidcreateprojecttest.project_chat.DefaultViewModel
+import com.example.androidcreateprojecttest.project_chat.chats.ChatsViewModel
+import com.example.androidcreateprojecttest.util.addNewItem
+
+class ChatsViewModelFactory(private val myUserID: String) :
+    ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        return ChatsViewModel(myUserID) as T
+    }
+}
 
 class ChatViewModelFactory(private val myUserID: String, private val otherUserID: String, private val chatID: String) :
     ViewModelProvider.Factory {

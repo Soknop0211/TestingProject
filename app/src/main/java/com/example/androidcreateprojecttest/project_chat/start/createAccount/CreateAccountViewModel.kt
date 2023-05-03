@@ -4,43 +4,41 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.androidcreateprojecttest.data.Event
 import com.example.androidcreateprojecttest.data.Result
-import com.example.androidcreateprojecttest.data.db.entity.User
 import com.example.androidcreateprojecttest.data.db.repository.AuthRepository
-import com.example.androidcreateprojecttest.data.db.repository.DatabaseRepository
-import com.example.androidcreateprojecttest.data.model.CreateUser
-import com.newapp.test_firebase_app.ui.DefaultViewModel
-import com.newapp.test_firebase_app.util.isEmailValid
-import com.newapp.test_firebase_app.util.isTextValid
-import com.google.firebase.auth.FirebaseUser
+import com.example.androidcreateprojecttest.data.model.CreateNewUser
+import com.example.androidcreateprojecttest.project_chat.DefaultViewModel
+import com.example.androidcreateprojecttest.util.isEmailValid
+import com.example.androidcreateprojecttest.util.isTextValid
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CreateAccountViewModel : DefaultViewModel() {
+@HiltViewModel
+class CreateAccountViewModel @Inject constructor(
+    private val authRepository : AuthRepository
+) : DefaultViewModel() {
 
-    private val dbRepository = DatabaseRepository()
-    private val authRepository = AuthRepository()
-    private val mIsCreatedEvent = MutableLiveData<Event<FirebaseUser>>()
+    private val mIsCreatedEvent = MutableLiveData<Event<String>>()
 
-    val isCreatedEvent: LiveData<Event<FirebaseUser>> = mIsCreatedEvent
+    val isCreatedEvent: LiveData<Event<String>> = mIsCreatedEvent
+
     val displayNameText = MutableLiveData<String>() // Two way
     val emailText = MutableLiveData<String>() // Two way
+    val phoneText = MutableLiveData<String>() // Two way
     val passwordText = MutableLiveData<String>() // Two way
+
     val isCreatingAccount = MutableLiveData<Boolean>()
 
-    private fun createAccount() {
+    private fun createNewUser() {
         isCreatingAccount.value = true
-        val createUser =
-            CreateUser(displayNameText.value!!, emailText.value!!, passwordText.value!!)
-
-        authRepository.createUser(createUser) { result: Result<FirebaseUser> ->
+        val createUser = CreateNewUser(userName = displayNameText.value!!, email = emailText.value!!, phone = phoneText.value!!, password = passwordText.value!!)
+        authRepository.createNewUser(createUser) { result: Result<String> ->
             onResult(null, result)
             if (result is Result.Success) {
                 mIsCreatedEvent.value = Event(result.data!!)
-                dbRepository.updateNewUser(User().apply {
-                    info.id = result.data.uid
-                    info.displayName = createUser.displayName
-                })
             }
             if (result is Result.Success || result is Result.Error) isCreatingAccount.value = false
         }
+
     }
 
     fun createAccountPressed() {
@@ -53,11 +51,17 @@ class CreateAccountViewModel : DefaultViewModel() {
             mSnackBarText.value = Event("Invalid email format")
             return
         }
+
+        if (!isTextValid(9, phoneText.value.toString())) {
+            mSnackBarText.value = Event("Invalid phone format")
+            return
+        }
+
         if (!isTextValid(6, passwordText.value)) {
             mSnackBarText.value = Event("Password is too short")
             return
         }
 
-        createAccount()
+        createNewUser()
     }
 }

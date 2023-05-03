@@ -1,4 +1,4 @@
-package com.newapp.test_firebase_app.util
+package com.example.androidcreateprojecttest.util
 
 import android.content.Context
 import android.content.SharedPreferences

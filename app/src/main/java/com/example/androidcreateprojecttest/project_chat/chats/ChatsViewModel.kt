@@ -9,18 +9,11 @@ import com.example.androidcreateprojecttest.data.db.entity.UserFriend
 import com.example.androidcreateprojecttest.data.db.entity.UserInfo
 import com.example.androidcreateprojecttest.data.db.remote.FirebaseReferenceValueObserver
 import com.example.androidcreateprojecttest.data.db.repository.DatabaseRepository
-import com.newapp.test_firebase_app.ui.DefaultViewModel
-import com.newapp.test_firebase_app.util.addNewItem
+import com.example.androidcreateprojecttest.data.model.CreateNewUser
+import com.example.androidcreateprojecttest.project_chat.DefaultViewModel
+import com.example.androidcreateprojecttest.util.addNewItem
 import com.newapp.test_firebase_app.util.convertTwoUserIDs
-import com.newapp.test_firebase_app.util.updateItemAt
-
-
-class ChatsViewModelFactory(private val myUserID: String) :
-    ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return ChatsViewModel(myUserID) as T
-    }
-}
+import com.example.androidcreateprojecttest.util.updateItemAt
 
 class ChatsViewModel(val myUserID: String) : DefaultViewModel() {
 

@@ -1,4 +1,4 @@
-package com.newapp.test_firebase_app.ui
+package com.example.androidcreateprojecttest.project_chat
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

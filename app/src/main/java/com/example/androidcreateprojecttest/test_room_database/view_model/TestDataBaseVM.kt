@@ -1,16 +1,14 @@
-package com.example.androidcreateprojecttest.repostory.test_room_database.model.view_model
+package com.example.androidcreateprojecttest.test_room_database.view_model
 
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.androidcreateprojecttest.repostory.test_room_database.model.Book
-import com.example.androidcreateprojecttest.repostory.test_room_database.model.BookDao
+import com.example.androidcreateprojecttest.test_room_database.Book
+import com.example.androidcreateprojecttest.test_room_database.BookDao
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

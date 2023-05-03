@@ -1,7 +1,7 @@
 package com.example.androidcreateprojecttest.data.db.remote
 
 import com.example.androidcreateprojecttest.data.model.CreateUser
-import com.newapp.test_firebase_app.data.model.Login
+import com.example.androidcreateprojecttest.data.model.Login
 import com.example.androidcreateprojecttest.data.Result
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -53,6 +53,11 @@ class FirebaseAuthSource {
     fun attachAuthStateObserver(firebaseAuthStateObserver: FirebaseAuthStateObserver, b: ((Result<FirebaseUser>) -> Unit)) {
         val listener = attachAuthObserver(b)
         firebaseAuthStateObserver.start(listener, authInstance)
+    }
+
+    // Use FirebaseFirestore
+    fun createNewUser(createUser: CreateUser): Task<AuthResult> {
+        return authInstance.createUserWithEmailAndPassword(createUser.email, createUser.password)
     }
 }
 

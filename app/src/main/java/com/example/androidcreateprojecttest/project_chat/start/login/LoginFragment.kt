@@ -13,9 +13,11 @@ import com.example.androidcreateprojecttest.data.EventObserver
 import com.example.androidcreateprojecttest.databinding.FragmentLoginBinding
 import com.example.androidcreateprojecttest.util.showSnackBar
 import com.example.androidcreateprojecttest.project_chat.main.MainActivity
-import com.newapp.test_firebase_app.util.SharedPreferencesUtil
+import com.example.androidcreateprojecttest.util.SharedPreferencesUtil
 import com.example.androidcreateprojecttest.util.forceHideKeyboard
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment() {
 
     private val viewModel by viewModels<LoginViewModel>()
@@ -57,7 +59,8 @@ class LoginFragment : Fragment() {
             })
 
         viewModel.isLoggedInEvent.observe(viewLifecycleOwner, EventObserver {
-            SharedPreferencesUtil.saveUserID(requireContext(), it.uid)
+            SharedPreferencesUtil.saveUserID(requireContext(), "EHwVQmcoM2jdrkga0bLQ")
+            view?.showSnackBar(it.email)
             navigateToChats()
         })
     }

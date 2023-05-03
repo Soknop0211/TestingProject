@@ -1,4 +1,4 @@
-package com.newapp.test_firebase_app.data.model
+package com.example.androidcreateprojecttest.data.model
 
 data class Login(
     var email: String = "",

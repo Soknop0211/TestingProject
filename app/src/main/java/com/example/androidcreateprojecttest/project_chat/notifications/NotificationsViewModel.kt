@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidcreateprojecttest.data.db.entity.*
 import com.example.androidcreateprojecttest.data.db.repository.DatabaseRepository
-import com.newapp.test_firebase_app.ui.DefaultViewModel
+import com.example.androidcreateprojecttest.project_chat.DefaultViewModel
 import com.example.androidcreateprojecttest.data.Result
-import com.newapp.test_firebase_app.util.addNewItem
-import com.newapp.test_firebase_app.util.removeItem
+import com.example.androidcreateprojecttest.util.addNewItem
+import com.example.androidcreateprojecttest.util.removeItem
 import com.newapp.test_firebase_app.util.convertTwoUserIDs
 
 class NotificationsViewModelFactory(private val myUserID: String) :

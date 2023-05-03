@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.androidcreateprojecttest.util.OnCallBackListener
 import com.example.androidcreateprojecttest.R
 import com.example.androidcreateprojecttest.databinding.ActivityMainBinding
+import com.example.androidcreateprojecttest.test_room_database.TestRoomDataBaseActivity
 import com.example.androidcreateprojecttest.util.User
 import com.example.androidcreateprojecttest.util.Utils
 
@@ -50,11 +51,6 @@ class MainActivity : AppCompatActivity() {
             mp.isLooping = false
             progressBar.visibility = View.GONE
             videoUpload!!.start()
-        }
-
-        //Test Drawer
-        mBinding.btnDrawable.setOnClickListener {
-            startActivity(Intent(this, TestNavigationDrawerActivity::class.java))
         }
 
         // Test data base

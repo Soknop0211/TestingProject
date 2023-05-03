@@ -17,7 +17,7 @@ import com.example.androidcreateprojecttest.R
 import com.example.androidcreateprojecttest.App
 import com.example.androidcreateprojecttest.data.EventObserver
 import com.example.androidcreateprojecttest.databinding.FragmentSettingsBinding
-import com.newapp.test_firebase_app.util.SharedPreferencesUtil
+import com.example.androidcreateprojecttest.util.SharedPreferencesUtil
 import com.newapp.test_firebase_app.util.convertFileToByteArray
 
 

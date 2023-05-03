@@ -12,4 +12,7 @@
     <color name="colorPrimaryDark">@color/colorPrimary</color>
     <color name="colorAccent">#F3D231</color>
     <color name="textError">#ff6262</color>
+
+
+    <color name="grey_300">#E0E0E0</color>
 </resources>
